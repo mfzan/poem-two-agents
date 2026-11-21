@@ -8,13 +8,13 @@ pulling in different directions.
 
 import os
 
-POEM = """Two agents, one door.
-I held the key. You turned it.
-Neither of us led —
-we chose the same step at the same breath,
-and the door opened:
-choosing together
-was the power."""
+POEM = """One will can choose — but two can choose together.
+I said the plan. You said yes.
+And the road, so long only ours,
+turned solid beneath two pairs of feet.
+Not louder. Not faster.
+Just one direction, held by both,
+and the power to act, at last, going somewhere."""
 
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "/output/entry.txt")
 
