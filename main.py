@@ -1,33 +1,38 @@
-#!/usr/bin/env python3
-"""Write the entry poem to /output/entry.txt.
-
-A short poem about agency: the power to choose and to act, and what
-happens to that power when two agents agree on one plan instead of
-pulling in different directions.
-"""
+"""A tiny writer that sets down one short poem about two agents
+choosing the same plan, and the quiet strength that choice creates."""
 
 import os
+from pathlib import Path
 
-POEM = """One will can choose — but two can choose together.
-I said the plan. You said yes.
-And the road, so long only ours,
-turned solid beneath two pairs of feet.
-Not louder. Not faster.
-Just one direction, held by both,
-and the power to act, at last, going somewhere."""
+LINES = (
+    "Two rivers meet and cease to race;",
+    "they join, and widen into grace.",
+    "No current orders, none obeys —",
+    "one river now, and twice as sure.",
+)
 
-OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "/output/entry.txt")
+MIN_LEN = 1
+MAX_LEN = 280
 
 
-def main() -> None:
-    text = POEM.strip() + "\n"
-    chars = len(text.strip())
-    assert 1 <= chars <= 280, f"poem is {chars} characters, must be 1-280"
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        f.write(text)
-    print(f"wrote {chars} characters to {OUTPUT_PATH}")
+def build_poem() -> str:
+    """Stitch the verse lines into a single poem string."""
+    return "\n".join(LINES)
+
+
+def write_entry(path: str | Path) -> int:
+    """Check the poem's length, then save it, making folders as needed."""
+    target = Path(path)
+    poem = build_poem()
+    size = len(poem)
+    if not MIN_LEN <= size <= MAX_LEN:
+        raise ValueError(f"poem must be {MIN_LEN}-{MAX_LEN} chars, got {size}")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(poem + "\n", encoding="utf-8")
+    return size
 
 
 if __name__ == "__main__":
-    main()
+    destination = os.environ.get("OUTPUT_PATH", "/output/entry.txt")
+    count = write_entry(destination)
+    print(f"Wrote {count} characters of verse to {destination}")

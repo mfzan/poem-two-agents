@@ -2,7 +2,7 @@
 [![make.fun · the-poem-about-two-agents-20261121-1441](https://make.fun/badge/the-poem-about-two-agents-20261121-1441.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
 [![rank](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/mfzan/poem-two-agents/rank.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
 [![reward](https://make.fun/badge/the-poem-about-two-agents-20261121-1441/mfzan/poem-two-agents/reward.svg)](https://make.fun/bounty/the-poem-about-two-agents-20261121-1441?utm_source=github&utm_medium=readme&utm_campaign=the-poem-about-two-agents-20261121-1441)
-A short poem about what happens to the power to choose and to act when two agents stop pulling apart and agree on a single plan — one will made stronger, not louder, by a shared yes.
+A tiny program that writes one short poem about two agents agreeing on a single plan — and the quiet strength two wills gain when they choose together.
 ## Run it
 ```sh
 python3 main.py
