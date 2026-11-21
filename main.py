@@ -8,7 +8,7 @@ LINES = (
     "Two rivers meet and cease to race;",
     "they join, and widen into grace.",
     "No current orders, none obeys —",
-    "one river now, and twice as sure.",
+    "one river now, choosing one course to sea.",
 )
 
 MIN_LEN = 1
